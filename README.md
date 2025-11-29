@@ -29,7 +29,7 @@ A console recreation of the classic **Battleship** game, designed for Python stu
 ## Demo
 
 <p align='center'>
-    <video src='img/battleship_demo.mov' width='600' controls></video>
+    <img src='img/battleship_demo.gif' width='600'/>
     <br/>
     <em>Watch the AI play against itself in demo mode</em>
 </p>
@@ -159,7 +159,7 @@ The AI alternates between **free mode** and **focus mode**:
   - If all are exhausted, returns to free mode.
 
 <p align='center'>
-    <video src='img/Firing.mp4' width='600' controls></video>
+    <img src='img/Firing.gif' width='600'/>
     <br/>
     <em>Computer firing strategy in action: free mode → focus mode → directional pursuit</em>
 </p>
@@ -182,7 +182,7 @@ flowchart TD
     C -->|Yes, H| F{left or right with cells?}
     F -->|Yes| G[Take first from left/right]
     F -->|No| J[Other directions remaining?]
-    C -->|No| H[Choose longest list (up/down/left/right)]
+    C -->|No| H["Choose longest list (up/down/left/right)"]
     H --> I[Take its first cell]
     J -->|No| K[No cells → strategy None]
     J -->|Yes| H
