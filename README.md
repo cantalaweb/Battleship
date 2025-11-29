@@ -124,23 +124,23 @@ The board is a `numpy.ndarray` of size `N x N` whose values are characters:
 
 ```mermaid
 flowchart TD
-    A[Start] --> B[Read args (--board, --ships)]
+    A[Start] --> B["Read args (--board, --ships)"]
     B --> C[Create player and computer boards]
     C --> D[Place ships with populate_board]
     D --> E[Display boards]
     E --> F{Game finished?}
     F -- No --> G[Player's turn]
     G --> G1[Read and parse cell]
-    G1 --> G2[fire() on computer's board]
+    G1 --> G2["fire() on computer's board"]
     G2 --> G3[Update player's visible board]
     G3 --> G4{scan_board == 0?}
-    G4 -- Yes --> Z[Player wins → End]
+    G4 -- Yes --> Z["Player wins → End"]
     G4 -- No --> H[Computer's turn]
-    H --> H1[Choose cell (AI)]
-    H1 --> H2[fire() on player's board]
+    H --> H1["Choose cell (AI)"]
+    H1 --> H2["fire() on player's board"]
     H2 --> H3[Update computer's visible board]
     H3 --> H4{scan_board == 0?}
-    H4 -- Yes --> Y[Computer wins → End]
+    H4 -- Yes --> Y["Computer wins → End"]
     H4 -- No --> E
     F -- Yes --> X[End]
 ```
@@ -177,10 +177,10 @@ flowchart TD
     A[Active strategy?] -->|No| B[Choose random available cell]
     A -->|Yes| C{strategy.dir fixed?}
     C -->|Yes, V| D{up or down with cells?}
-    D -->|Yes| E[Take first from up/down]
+    D -->|Yes| E["Take first from up/down"]
     D -->|No| J[Other directions remaining?]
     C -->|Yes, H| F{left or right with cells?}
-    F -->|Yes| G[Take first from left/right]
+    F -->|Yes| G["Take first from left/right"]
     F -->|No| J[Other directions remaining?]
     C -->|No| H["Choose longest list (up/down/left/right)"]
     H --> I[Take its first cell]
@@ -189,8 +189,8 @@ flowchart TD
 
     subgraph Update after firing
     L[Fire] --> M{Result}
-    M -->|Hit (X)| N[update_firing_strategy('X', cell, strategy)]
-    M -->|Water (A)| O[update_firing_strategy('A', cell, strategy)]
+    M -->|Hit (X)| N["update_firing_strategy('X', cell, strategy)"]
+    M -->|Water (A)| O["update_firing_strategy('A', cell, strategy)"]
     end
 ```
 
