@@ -189,8 +189,8 @@ flowchart TD
 
     subgraph Update after firing
     L[Fire] --> M{Result}
-    M -->|Hit (X)| N["update_firing_strategy('X', cell, strategy)"]
-    M -->|Water (A)| O["update_firing_strategy('A', cell, strategy)"]
+    M -->|"Hit (X)"| N["update_firing_strategy('X', cell, strategy)"]
+    M -->|"Water (A)"| O["update_firing_strategy('A', cell, strategy)"]
     end
 ```
 
