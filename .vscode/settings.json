@@ -1,0 +1,45 @@
+{
+  // Python settings
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "none"
+  },
+  "python.analysis.extraPaths": ["/src"],
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.typeCheckingMode": "off", // Disable Pylance type checking, allowing MyPy to do so.
+  "python.terminal.activateEnvironment": true,
+  "python.defaultInterpreterPath": "/.venv/bin/python",
+  "python.languageServer": "Pylance",
+  "python.terminal.shellIntegration.enabled": true,
+
+  // Test settings
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.cwd": "/tests",
+  "python.testing.pytestPath": "/.venv/bin/pytest",
+  "python.testing.pytestArgs": ["-q"],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+  // git settings
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+
+  // Code-Runner settings
+  // Keep terminal at the project root (not src/)
+  "code-runner.fileDirectoryAsCwd": false,
+  "code-runner.cwd": "${workspaceFolder}",
+  // Run current file relative to the workspace root
+  "code-runner.executorMap": {
+    "python": "uv run -- python -u $relativeFile"
+  },
+  // Reuse one terminal with a friendly name
+  "code-runner.runInTerminal": true,
+  "code-runner.terminalName": "battleship",
+  // Reduce noise
+  "code-runner.showExecutionMessage": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
+  "code-runner.saveFileBeforeRun": true
+}

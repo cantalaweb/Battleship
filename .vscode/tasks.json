@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "uv: sync",
+      "type": "shell",
+      "command": "uv sync",
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "silent" }
+    },
+    {
+      "label": "uv: pytest",
+      "type": "shell",
+      "command": "uv run -- pytest -q",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "uv: run app",
+      "type": "shell",
+      "command": "uv run -- python -m uvicorn main:app --reload",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run current Python file (uv, root CWD)",
+      "type": "shell",
+      "command": "uv",
+      "args": ["run", "--", "python", "-u", "${file}"], // or "${relativeFile}"
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true }, // lets you use ⇧⌘B
+      "problemMatcher": []
+    }
+  ]
+}
